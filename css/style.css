@@ -28,7 +28,7 @@ body {
   border-radius: 30px;
   transition: all 0.3s;
   color: #fff;
-  background-color: #34baa2;
+  background-color: #FF5A5F;
 }
 
 .title {
@@ -121,7 +121,7 @@ body {
 
 .main {
   background: url("../img/home/background_placeholder.png") center / cover no-repeat;
-  min-height: 40vh;
+  min-height: 500px;
 }
 
 .main__container {
@@ -163,6 +163,46 @@ body {
   letter-spacing: 0.02em;
   font-size: 1.375rem;
   line-height: 110%;
+}
+
+.main__booking-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main__button--full {
+  background-color: #34baa2;
+}
+
+.main__button--master {
+  background-color: #2a8f7d;
+}
+
+.main__button--small {
+  background-color: #1f6b5d;
+}
+
+.main__button--whatsapp {
+  background-color: #25d366;
+}
+
+.main__whatsapp-contact {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.main__whatsapp-contact p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #2a8f7d;
 }
 
 .outro_home {
@@ -247,6 +287,8 @@ body {
   flex-direction: column;
   align-items: start;
   min-height: 100%;
+  min-height: 650px;
+  justify-content: space-between;
 }
 
 .item-services__image {
@@ -256,6 +298,9 @@ body {
   width: 100%;
   overflow: hidden;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-services__image img {
@@ -265,6 +310,7 @@ body {
   object-position: center;
   border-radius: 16px;
   display: block;
+  min-height: 421px;
 }
 
 .item-services__title {
@@ -281,14 +327,90 @@ body {
   letter-spacing: 0.02em;
 }
 
+.item-services__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-services__buttons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .item-services__button {
   background-color: inherit;
   border: 2px solid #34baa2;
   color: #34baa2;
 }
 
+/* Override Airbnb color for View buttons to keep original green style */
+.item-services__button.button {
+  background-color: inherit;
+  border: 2px solid #34baa2;
+  color: #34baa2;
+}
+
+/* Airbnb booking buttons in services section */
+.item-services__button.button[href*="airbnb"] {
+  background-color: #FF5A5F;
+  border: 2px solid #FF5A5F;
+  color: #fff;
+  margin-top: 0.75rem;
+}
+
+/* Booking.com booking buttons in services section */
+.item-services__button.button[href*="booking.com"] {
+  background-color: #003580;
+  border: 2px solid #003580;
+  color: #fff;
+  margin-top: 0.75rem;
+}
+
+/* Override for community section to keep all buttons green */
+#community .item-services__button.button[href*="booking.com"] {
+  background-color: inherit;
+  border: 2px solid #34baa2;
+  color: #34baa2;
+  margin-top: 0;
+}
+
+/* Booking.com buttons on subsidiary pages */
+.services-page__button.button[href*="booking.com"],
+.outro__button.button[href*="booking.com"] {
+  background-color: #003580;
+  border: 2px solid #003580;
+  color: #fff;
+}
+
+.item-services__button--book {
+  background-color: #25d366;
+  border: 2px solid #25d366;
+  color: #fff;
+  margin-top: 0.75rem;
+}
+
 .outro_services {
   background: url("../img/services/hero_placeholder.jpg") center / cover no-repeat;
+}
+
+.services__whatsapp-contact {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.services__whatsapp-contact p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a8f7d;
 }
 
 /* ************TESTIMONIAL**************** */
@@ -408,7 +530,7 @@ body {
 }
 
 .main_pages {
-  min-height: 676px !important;
+  min-height: 500px !important;
 }
 
 /* ****************SERVICES PAGE**************** */
@@ -518,6 +640,14 @@ body {
   gap: 12px;
 }
 
+.contact__link img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  max-width: 60px !important;
+  max-height: 60px !important;
+}
+
 .contact__text {
   max-width: 545px;
   font-size: 18px;
@@ -526,6 +656,46 @@ body {
 
 .contact__text p:not(:last-child) {
   margin-bottom: 15px;
+}
+
+.contact__about {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.contact__about-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact__about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(75%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.contact__about-image:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.contact__about-text {
+  flex: 1;
+}
+
+.contact__about-text p:not(:last-child) {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
 }
 
 iframe {
@@ -1252,6 +1422,18 @@ iframe {
     padding-bottom: 80px;
   }
 
+  .contact__about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .contact__about-image {
+    width: 150px;
+    height: 150px;
+  }
+
   .icon-menu span {
     top: calc(50% - 0.0625rem);
   }
@@ -1325,6 +1507,23 @@ iframe {
 
   .main__container {
     padding-top: 12.5rem;
+  }
+  
+  .main__booking-options {
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+  
+  .main__button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .main__whatsapp-contact {
+    padding: 1rem;
+    margin-top: 0.75rem;
   }
 
   .main__container_pages {
